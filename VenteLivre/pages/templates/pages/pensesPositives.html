@@ -1,0 +1,18 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Penses Positives{% endblock %}
+
+{% block 'content' %}
+    <h1>Penses Positives</h1>
+    <div class="pense">
+        <img id="penseImg" src="{% static 'pages/images/penses1.jpg' %}" alt="Pense">
+        <img id="penseImg" src="{% static 'pages/images/pense2.jpg' %}" alt="Pense">
+        <img id="penseImg" src="{% static 'pages/images/penses3.jpg' %}" alt="Pense">
+        <img id="penseImg" src="{% static 'pages/images/penses4.jpg' %}" alt="Pense">
+    </div>
+    <div>
+        <a href="{% url 'categories' %}">Vers Home Page</a>
+    </div>
+{% endblock %}

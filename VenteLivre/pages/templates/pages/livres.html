@@ -1,0 +1,18 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Nos Livres{% endblock %}
+
+{% block 'content' %}
+    <h1>Nos Livres</h1>
+    
+    <div class="livre">
+        <img id="livreLoin" src="{% static 'pages/images/LivreLoin.jpg' %}" alt="livres">
+        <h2>$10.05</h2>
+        <a href="{% url 'formulaire'%}">Acheter</a>
+    </div>
+    <div>
+        <a href="{% url 'categories' %}">Vers Home Page</a>
+    </div>
+{% endblock %}

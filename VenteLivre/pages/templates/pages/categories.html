@@ -1,0 +1,38 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Article{% endblock %}
+
+{% block 'content' %}
+    <header>
+      <!-- Menu principale -->
+        <ul class="menu">
+          <li><a href="{% url 'home'%}">Home Page</a></li>
+          <li><a href="{% url 'about' %}">About Me</a></li>
+          <li><a href="{% url 'pub' %}">Publication</a></li>
+          <li><a href="{% url 'formulaire'%}">Formulaire</a></li>
+        </ul>
+      </header>
+      
+    <!-- section mes Articles-->
+    <section id="menus">
+      <h1 class="mini-titre">Nos Articles</h1>
+      <ul class="urls">
+        <li><a href="{% url 'livres' %}">Voir Livres</a></li>
+        <li><a href="{% url 'article' %}">Voir Articles</a></li>
+        <li><a href="{% url 'penses' %}">Voir Penses Positives</a></li>
+      </ul>
+    </section>
+    <div >
+    <img id="myImage" src="{% static 'pages/images/image_bib.jpg' %}" alt="Biblioteque">
+    </div>
+        <!-- Footer  -->
+      <footer>
+        <div class="footer-text">
+          Réalisé par <span>louangebalerwa</span> | Tous les droits sont reservés. 
+          <p>&copy; Vente de livres 2024</p>
+        </p>
+        </div>
+      </footer>
+{% endblock %}

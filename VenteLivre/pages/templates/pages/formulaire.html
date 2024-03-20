@@ -1,0 +1,41 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Formulaire{% endblock %}
+
+{% block 'content' %}
+  {% comment %} {% url 'contact_submit' %} {% endcomment %}
+  <section id="acheter">
+    <form action="" method="post">
+      <h1>Faire Achat</h1>
+      <label for="name">Nom:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="num">Votre numéro de téléphone</label>
+      <input type="text" id="num" name="num" required>
+      <br>
+      <label for="name">Pays</label>
+      <input type="text" id="pays" name="pays" required>
+      <br>
+      <label for="livre">Nom du livre et Son Auteur</label>
+      <textarea id="" name="livre" rows="2" required></textarea>
+      <br>
+      <label for="piece">Nombre de Piece</label>
+      <input type="text" id="piece" name="piece" required>
+      <br>
+      <label for="">Date d'achat</label>
+      <input type="date" id="date" name="date" required>
+      <br>
+      <button type="submit">Envoyer</button>
+      <div>
+        <a href="{% url 'categories' %}">Vers Home Page</a>
+      </div>
+    </form>
+  </section>
+  
+{% endblock %}
+

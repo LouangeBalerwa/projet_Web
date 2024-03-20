@@ -1,0 +1,41 @@
+<!-- page d'accueil -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vente en ligne">
+    <meta name="author" content="Louange Balerwa">
+    <title>My home Page</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+</head>
+<body style="background-image:url('{% static 'pages/images/image1.jpg' %}'); background-repeat: no-repeat;background-size: cover; background-position: center center">
+  <div>
+    <h1 id="titre">VENTE DE LIVRES</h1>
+    <p class="texteP"><em>Welcome!</em></p>
+    <p class="texteP">Bienvenus sur notre site de Vente de Livres en ligne! <br/>
+      Ici nous vendons de livres de tout genres.
+    </p>
+    <br>
+    <a href="{% url 'categories' %}" >
+      <button id="btn_entrer">Entrer</button>
+      </a>
+  </div>
+  
+</body>
+<footer>
+  <div class="footer-text">
+    Réalisé par <span>louangebalerwa</span> | Tous les droits sont reservés. 
+    <p>&copy; Vente de livres 2024</p>
+  </p>
+</div>
+  </footer>
+</html>
+
+
+
+

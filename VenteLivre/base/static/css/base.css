@@ -1,0 +1,263 @@
+/** base.css **/
+
+/* =======faire la resposivites======== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  main {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  body {
+    position: relative;
+    font-size: 12px;
+  }
+}
+
+/* =========Pade d'accueil principale========= */
+#titre{
+  text-align: center;
+  color: red;
+  font-size: 50px;
+}
+.texteP{
+    position: relative;
+    top: 80px;
+    text-align: center;
+    color: #fff;
+}
+
+/* ===========Page categories et autre=========== */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: aqua;
+}
+#myImage{
+  width: 100%;
+  height: 500px;
+  padding: 5px;
+  object-fit: cover;
+}
+.mini-titre {
+  position: relative;
+  top: 30px;
+  text-align: center;
+  color: red;
+  font-size: 40px;
+}
+
+h1 {
+  position: relative;
+  top: 30px;
+  text-align: center;
+  color: red;
+  font-size: 30px;
+}
+a{
+  font-size: 20px;
+  text-decoration: 0;
+  
+}
+
+/* =============header du menu principale==========*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+}
+.menu li {
+  margin: 50px 10px;
+  list-style: none;
+}
+.menu li a {
+  position: relative;
+  font-size: 20px;
+  text-decoration: 0;
+  color:blue;
+}
+.menu li a:hover::before {
+  width: 100%;
+}
+.menu li a::after {
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  content: " ";
+  width: 0%;
+  height: 2px;
+  border-radius: 6px;
+  background-color: #370fc7;
+  transition: 1s;
+}
+
+.menu li a:hover {
+  color: #000;
+}
+
+.urls a {
+  position: relative;
+  font-size: 25px;
+  text-decoration: 0;
+  border: 2px solid black;
+  color: white;
+  background-color: #000;
+  margin: 5px;
+}
+.urls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  top: 40px;
+}
+.urls li{
+  list-style: none;
+}
+
+#btn_entrer{
+  display: flex;
+  padding-top:auto;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 80px;
+  width: 100px;
+  height: 50px;
+  border: 0;
+  transition: 0.5s;
+  position: relative;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+#btn_entrer:hover {
+  background-color: red;
+}
+
+
+/* ===============Formulaires===============*/
+
+form {
+    width: 500px;
+    margin: 20px auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+
+ 
+  #acheter button {
+    margin-top: 30px;
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    transition: 0.5s;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+  }
+  #publcation button {
+    margin-top: 5px;
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    transition: 0.5s;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+  }
+/* =============Achsat Livres================= */
+.livre {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-around;
+}
+
+.livre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 35px;
+  
+}
+
+.livre img {
+  width: 250px;
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.livre p {
+  text-align: center;
+  font-size: 16px;
+}
+
+.livre a {
+  margin-top: 10px;
+  font-size: 16px;
+  text-decoration: 0;
+  background-color: blue;
+  padding: 5px 60px;
+  columns: #fff;
+  color: #fff;
+  border-radius: 6px;
+}
+.pense #penseImg{
+  margin-top: 20px;
+  width: 300px;
+  height: 300px;
+  
+  box-shadow: 0 0 5px blue;
+}
+/* ============About============ */
+.about{
+  padding: 30px;
+  text-align: center;
+}
+
+/* =================bas de la page================= */
+.footer-text {
+  position: absolute;
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  color:white;
+  text-align: center; 
+}
+.footer-text span {
+  color:gold;
+}
