@@ -11,6 +11,6 @@ urlpatterns = [
     path('penses', views.penses, name ='penses'),
     path('pub', views.publication, name ='pub'),
     path('article', views.articles, name='article'),
-    path('about/', views.about, name='about'),
+    path('about', views.about, name='about'),
    
 ]

@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'VenteLivre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'vente_db',
+        'NAME' : 'vente_livre_bd',
         'USER' : 'vt_admin',
         'PASSWORD': DATABASE_PASSWORD,
         'HOST' : 'localhost',
