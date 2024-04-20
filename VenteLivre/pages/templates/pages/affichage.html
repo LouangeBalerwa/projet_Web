@@ -1,0 +1,19 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}{{ auteur.nom_auteur }}{% endblock %}
+
+{% block 'content' %}
+    <h1>Listes des Auteurs</h1>
+    <br>
+    <ul>
+        <h3>{{ auteurs.nom_auteur }}</h3>
+        <li>{{ auteurs.email }} : <strong>{{ post.num_tel }}</strong></li>
+        <li>{{ auteurs.num_tel }}</li>
+        <li><em>{{ auteurs.pays }}</em></li>
+  
+    </ul>
+    <a href="{% url 'categories' %}">Vers Page Menus</a>
+        
+{% endblock %}

@@ -9,10 +9,10 @@ class livre(models.Model):
     nom_auteur = models.CharField(unique=True, max_length=100)
     
 class auteur(models.Model):
-    nom_auteur = models.CharField(max_length=255, help_text="Entrez votre nom")
+    nom_auteur = models.CharField(max_length=255, help_text="")
     email = models.EmailField()
     num_tel = models.IntegerField(default=0)
-    pays = models.CharField(max_length=200, blank=True, help_text="Entrez votre pays d'origine")
+    pays = models.CharField(max_length=200, blank=True, help_text="")
     
     def __str__(self):
         return self.nom_auteur

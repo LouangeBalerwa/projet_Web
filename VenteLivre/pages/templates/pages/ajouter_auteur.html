@@ -1,0 +1,20 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}FORM{% endblock %}
+
+{% block 'content' %} 
+    <h1>Ajouter un Auteur</h1> 
+     {% comment %} {% url 'contact_submit' %} {% endcomment %}
+  <section id="publcation">
+    <form action method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+
+      <input type="submit" name="" value="Envoyer"> 
+    
+  </form>
+  </section>
+
+{% endblock %}
