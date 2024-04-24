@@ -90,8 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
         'NAME' : 'vente_livre_bd',
-        'USER' : 'root',
-        'PASSWORD': "",
+        'USER' : 'vt_admin',
+        'PASSWORD': DATABASE_PASSWORD,
         'HOST' : 'localhost',
         'PORT' : '3306',
     }
