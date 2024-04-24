@@ -1,0 +1,23 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Supprime_Auteur: {{data.nom_auteur}}{% endblock %}
+
+{% block 'content' %} 
+    <h1>Modifier un Auteur</h1> 
+  <section>
+    <form action = "{% url 'supprime_auteur' data.id %}"  method="POST">
+      {% csrf_token %}
+      <br>
+      <p>Voullez-vous supprimez l'auteur {{data.nom_auteur}} ?</p>
+        <br>
+      <input type="submit" name="" value="Confimer"> 
+      <div>
+        <a href="{% url 'affichage' %}">Back</a>
+    </div>
+    
+  </form>
+  </section>
+
+{% endblock %}

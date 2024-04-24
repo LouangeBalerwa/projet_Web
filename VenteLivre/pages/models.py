@@ -16,6 +16,9 @@ class auteur(models.Model):
     
     def __str__(self):
         return self.nom_auteur
+    def get_absolute_url(self):
+        return "affichage"
+
     
 class pensesPositives(models.Model):
     TitreP = models.CharField(unique=True, max_length=200)

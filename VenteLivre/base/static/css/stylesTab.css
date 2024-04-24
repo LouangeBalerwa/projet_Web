@@ -1,0 +1,76 @@
+.btn_save{
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 3px;
+    margin: 30px;
+    font-size: 15px;
+    text-decoration: none
+    
+}
+
+.tableau{
+    
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 2px solid #009879;
+    padding: 5px;
+    margin: 20 auto;
+    justify-content: center;
+    width: 100%;
+}
+
+thead{
+    padding: 30px;
+}
+tbody{
+    border-bottom: 1px solid #dddddd;
+}
+thead th{
+    text-align: left;
+    background: #009879;
+    color: #fff;
+}
+
+th,td{
+    padding: 10px;
+}
+.btn_edit{
+    background-color: rgb(219, 216, 6);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    text-decoration: none;
+}
+.btn_supprime{
+    background-color: red;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+    text-decoration: none;
+}
+.tableau p {
+    width: 50%;
+    text-align: left;
+    margin: 10px;
+    font-size: 30px;
+}
+.t_form{
+    text-align: left;
+}
+#sub{
+    text-align: center;
+    color: white;
+    background-color: #009879;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-left: 30%;
+}
+tfoot{
+    text-align: center;
+    background: #009879;
+    color: #fff;
+    
+}

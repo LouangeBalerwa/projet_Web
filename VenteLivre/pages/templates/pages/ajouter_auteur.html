@@ -2,19 +2,22 @@
 
 {% load static %}
 
-{% block 'title' %}FORM{% endblock %}
+{% block 'title' %}Ajout_auteur{% endblock %}
 
 {% block 'content' %} 
-    <h1>Ajouter un Auteur</h1> 
-     {% comment %} {% url 'contact_submit' %} {% endcomment %}
+    <h1>Ajouter Auteur</h1> 
   <section id="publcation">
-    <form action method="POST">
+    <form action = "{% url 'ajouter_auteur' %}"  method="POST">
       {% csrf_token %}
       {{form.as_p}}
 
       <input type="submit" name="" value="Envoyer"> 
     
   </form>
+  <p>
+    <a href="{% url 'modifier_auteur' 1 %}">Edit Post</a>
+  </p>
+    
   </section>
 
 {% endblock %}
