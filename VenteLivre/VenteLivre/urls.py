@@ -21,6 +21,10 @@ from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # NEW: path for app pages
     path('', include('pages.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # NEW
+    path('accounts/', include('accounts.urls')), 
+    # NEW: path for account management
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('admin/', admin.site.urls),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
