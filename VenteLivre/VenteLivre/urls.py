@@ -23,8 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     # NEW: path for app pages
     path('', include('pages.urls')),
-    path('accounts/', include('accounts.urls')), 
     # NEW: path for account management
+    path('accounts/', include('accounts.urls')), 
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

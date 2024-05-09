@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     # Standalone Web Pages
     path('', views.home, name='home'),
-    path('ajouter_auteur', views.ajouter_auteur, name = 'ajouter_auteur'),
+     path('ajouter_auteur', views.ajouter_auteur, name = 'ajouter_auteur'),
     path('affichage', views.affichage, name ='affichage'),
     path('modifier_auteur/<int:id_auteur>/', views.modifier_auteur, name = 'modifier_auteur'),
     path('supprime_auteur/<int:id_auteur>/', views.supprime_auteur, name = 'supprime_auteur'),

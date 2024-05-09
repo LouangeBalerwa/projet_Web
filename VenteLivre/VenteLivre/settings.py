@@ -90,6 +90,9 @@ WSGI_APPLICATION = 'VenteLivre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        },
         'NAME' : 'vente_livre_bd',
         'USER' : 'vt_admin',
         'PASSWORD': DATABASE_PASSWORD,
@@ -141,5 +144,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+# LOGOUT_REDIRECT_URL = 'pages:home'
+
 LOGIN_REDIRECT_URL = 'categories'
