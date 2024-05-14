@@ -1,0 +1,44 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Show_Compte{% endblock %}
+
+{% block 'content' %}
+    <h1>Listes des Comptes<a href ="compte" class="btn_save">Ajouter</a></h1>
+    <br>
+    <table  class="tableau" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MATRICULE</th>
+                <th>TYPE DE COMPE</th>
+                <th>BALANCE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compte in comptes %}
+                <tr>
+                    <td>{{ compte.id }}</td>
+                    <td>{{ compte.matricule }}</td> 
+                    <td>{{ compte.type_compte }}</td>
+                    <td>{{ compte.balance}}</td>
+                    <td><a href="{% url 'pages:modifier_compte' compte.id %}" class="btn_edit">Editer</a>
+                        <a href="{% url 'pages:supprime_compte' compte.id %}" class="btn_supprime"> Supprimer </a>
+                    </td>              
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    Liste des Comptes!!!
+                </td>
+            </tr>
+        </tfoot>
+    </table> 
+
+    <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
+        
+{% endblock %}

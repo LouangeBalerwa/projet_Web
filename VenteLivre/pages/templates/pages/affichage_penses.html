@@ -1,0 +1,30 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Show_Penses{% endblock %}
+
+{% block 'content' %}
+    {% for pense in penses %}
+        <ul>
+            <li>{{ pense.TitreP }}</li>
+            <li>{{ pense.contenus}}</li> 
+            <li>{{ pense.nom_auteur }}</li>
+            <li>{{ pense.date}}</li>        
+        </ul>
+    {% endfor %}
+    <div>
+        <img id="penseImg" src="{% static 'pages/images/penses1.jpg' %}" alt="Pense">
+        <!-- <img id="penseImg" src="{% static 'pages/images/pense2.jpg' %}" alt="Pense">
+        <img id="penseImg" src="{% static 'pages/images/penses3.jpg' %}" alt="Pense">
+        <img id="penseImg" src="{% static 'pages/images/penses4.jpg' %}" alt="Pense"> -->
+    </div>
+    <div>
+        <a href="{% url 'pages:messageImg' %}">Publier une Photo</a>
+        <br>
+        <a href="{% url 'pages:pense_positives' %}">Puplier un texte</a>
+        <br>
+        <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
+    </div>
+        
+{% endblock %}

@@ -7,12 +7,18 @@
 {% block 'content' %}
     <h1>Nos Livres</h1>
     
-    <div class="livre">
+    <!-- <div class="livre">
         <img id="livreLoin" src="{% static 'pages/images/LivreLoin.jpg' %}" alt="livres">
         <h2>$10.05</h2>
-        <a href="{% url 'formulaire'%}">Acheter</a>
+        <a href="{% url 'pages:formulaire'%}">Acheter</a>
     </div>
-    <div>
-        <a href="{% url 'categories' %}">Vers Page Menus</a>
+    <div> -->
+
+        <form action = "{% url 'pages:mesLivres' %}"  method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+      
+            <input type="submit" name="" value="Envoyer"> 
+        <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
     </div>
 {% endblock %}

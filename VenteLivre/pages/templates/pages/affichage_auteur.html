@@ -7,47 +7,45 @@
 {% block 'content' %}
     <h1>Listes des Auteurs<a href ="ajouter_auteur" class="btn_save">Ajouter</a></h1>
     <br>
-    <!-- <ul>
-        <h3>{{ auteurs.nom_auteur }}</h3>
-        <li>{{ auteurs.email }} : <strong>{{ post.num_tel }}</strong></li>
-        <li>{{ auteurs.num_tel }}</li>
-        <li><em>{{ auteurs.pays }}</em></li>
-    </ul>  -->
-    
     <table  class="tableau" >
         <thead>
             <tr>
-                <!-- <th>ID</th> -->
+                <th>ID</th>
                 <th>NOM</th>
                 <th>ADRESSE MAIL</th>
                 <th>NUMERO_TEL</th>
+                <th>MATRICULE</th>
                 <th>PAYS</th>
+                <th>VILLE</th>
                 <th>ACTION</th>
             </tr>
         </thead>
         <tbody>
             {% for auteur in auteurs %}
                 <tr>
-                    <!-- <td>{{ auteur.id }}</td> -->
+                    <td>{{ auteur.id }}</td>
                     <td>{{ auteur.nom_auteur }}</td>
-                    <td>{{ auteur.email }} </td>
+                    <td>{{ auteur.email}}</td>
                     <td>{{ auteur.num_tel }}</td>
+                    <td>{{ auteur.matricule }}</td>
                     <td>{{ auteur.pays }}</td>
-                    <td><a href="{% url 'modifier_auteur' auteur.id %}" class="btn_edit">Editer</a>
-                        <a href="{% url 'supprime_auteur' auteur.id %}" class="btn_supprime">Supprimer</a></td>
+                    <td>{{ auteur.ville }}</td>
+                    <td><a href="{% url 'pages:modifier_auteur' auteur.id %}" class="btn_edit">Editer</a>
+                        <a href="{% url 'pages:supprime_auteur' auteur.id %}" class="btn_supprime"> X </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5">
+                <td colspan="8">
                     Liste des Auteurs!!!
                 </td>
             </tr>
         </tfoot>
     </table> 
 
-    <a href="{% url 'categories' %}">Vers Page Menus</a>
+    <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
         
 {% endblock %}
 

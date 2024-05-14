@@ -1,0 +1,17 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Show_Images{% endblock %}
+
+{% block 'content' %}
+    
+            {% for image in images %}
+               <ul>
+                    <li>{{image.ajouter_auteur}}</li>
+                    <li>{{image.image}}</li>
+               </ul>
+            {% endfor %}
+    <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
+        
+{% endblock %}

@@ -2,12 +2,12 @@
 
 {% load static %}
 
-{% block 'title' %}Ajout_auteur{% endblock %}
+{% block 'title' %}Creer_compte{% endblock %}
 
 {% block 'content' %} 
-    <h1>Ajouter Auteur</h1> 
-  <section id="publcation">
-    <form action = "{% url 'pages:ajouter_auteur' %}"  method="POST">
+    <h1>Creation de Compte</h1> 
+  <section id="">
+    <form action = "{% url 'pages:compte' %}"  method="POST">
       {% csrf_token %}
       {{form.as_p}}
 

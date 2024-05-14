@@ -7,7 +7,7 @@
 {% block 'content' %} 
     <h1>Modifier un Auteur</h1> 
   <section>
-    <form action = "{% url 'modifier_auteur' data.id %}"  method="POST">
+    <form action = "{% url 'pages:modifier_auteur' data.id %}"  method="POST">
       {% csrf_token %}
       {{form.as_p}}
 

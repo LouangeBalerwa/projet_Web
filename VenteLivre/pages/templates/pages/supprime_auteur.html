@@ -7,14 +7,14 @@
 {% block 'content' %} 
     <h1>Modifier un Auteur</h1> 
   <section>
-    <form action = "{% url 'supprime_auteur' data.id %}"  method="POST">
+    <form action = "{% url 'pages:supprime_auteur' data.id %}"  method="POST">
       {% csrf_token %}
       <br>
       <p>Voullez-vous supprimez l'auteur {{data.nom_auteur}} ?</p>
-        <br>
+      <br>
       <input type="submit" name="" value="Confimer"> 
       <div>
-        <a href="{% url 'affichage' %}">Back</a>
+        <a href="{% url 'pages:affichage_auteur' %}"><input type="button" value="Cancel"></a>
     </div>
     
   </form>

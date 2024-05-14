@@ -1,0 +1,23 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Supprime_Compte: {{data.matricule}}{% endblock %}
+
+{% block 'content' %} 
+    <h1>Supprimer Compte</h1> 
+  <section>
+    <form action = "{% url 'pages:supprime_compte' data.id %}"  method="POST">
+      {% csrf_token %}
+      <br>
+      <p>Voullez-vous supprimez le compte avec le matricule: {{data.matricule}} ?</p>
+      <br>
+      <input type="submit" name="" value="Confimer"> 
+      <div>
+        <a href="{% url 'pages:affichage_compte' %}"><input type="button" value="Cancel"></a>
+    </div>
+    
+  </form>
+  </section>
+
+{% endblock %}

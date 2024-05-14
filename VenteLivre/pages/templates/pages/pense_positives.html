@@ -1,0 +1,18 @@
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Penses Positives{% endblock %}
+
+{% block 'content' %}
+    <h1>Penses Positives</h1>
+    <div class="pense">
+        <form action = "{% url 'pages:pense_positives' %}"  method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+      
+            <input type="submit" name="" value="Envoyer">    
+    </div>
+
+   
+{% endblock %}
