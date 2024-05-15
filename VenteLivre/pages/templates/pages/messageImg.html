@@ -7,7 +7,7 @@
 {% block 'content' %} 
     <h1>Puplication des Carnet</h1> 
   <section id="">
-    <form action = "{% url 'pages:messageImg' %}"  method="POST">
+    <form action = "{% url 'pages:messageImg' %}"  method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       {{form.as_p}}
 

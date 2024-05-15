@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.http import Http404
-from .forms import auteurForm, compteForm, pensesForm, livreForm, messageImgForm
-from .models import auteur, creationCompte,pensesPositives, messageImage,livre
+from .forms import auteurForm, compteForm, pensesForm, livreForm, messageImgForm, achatForm
+from .models import auteur, creationCompte,pensesPositives, messageImage,livre, achat
 from django import forms 
 
 # ========================Page d'accueille=================
@@ -130,9 +130,34 @@ def affichage_penses(request):
   data =  {'penses':pense}
   
   return render(request, 'pages/affichage_penses.html', data) 
+
+#  ------------------Add penses du jours image-----------------------------
+def message_image(request):
+    if request.method == 'POST':
+      form = messageImgForm(request.POST, request.FILES)
+      if form.is_valid():
+        form.save()
+        messageImage = form.save()
+        return redirect(messageImage) 
+    else:
+        form = messageImgForm()
+    return render(request, 'pages/messageImg.html.',{'form': form})
+
+# ------------------Show penses du jours image -----------------------------
+def image_list(request):
+  try:
+    images = messageImage.objects.all()
+  except:
+    raise Http404("Cette page n'exciste pas!!!")
+  
+  data =  {'images': images}
+  
+  return render(request, 'pages/image_list.html', data)
+
 # =======================FIN PENSES POSITIVES ==================
 
 # =======================view LIVRE ===================
+#  ------------------Add livre -----------------------------
 def mes_livres(request):
   
   if request.method == "POST":
@@ -153,7 +178,7 @@ def mes_livres(request):
       )
       
       data.save()
-      return redirect(mes_livres) 
+      return redirect('/affichage_livre') 
         
     # except:
     #     print("Error")
@@ -161,35 +186,34 @@ def mes_livres(request):
       
   else:     
     return render(request, 'pages/livres.html',{'form': livreForm})
-
-
-
-def message_image(request):
-    if request.method == 'POST':
-      form = messageImgForm(request.POST, request.FILES)
-      if form.is_valid():
-        form.save()
-        messageImage = form.save()
-        return redirect(messageImage) 
-    else:
-        form = messageImgForm()
-    return render(request, 'pages/messageImg.html.',{'form': form})
-
-def image_list(request):
-  try:
-    images = messageImage.objects.all()
-  except:
-    raise Http404("Cette page n'exciste pas!!!")
   
-  data =  {'images': images}
-  
-  return render(request, 'image_list.html', data)
+#  ------------------Show Livres -----------------------------
+def affichage_livre(request):
+  livres = livre.objects.all()
+  data = { 'livres': livres}
+  return render(request, 'pages/affichage_livre.html', data)
+
+# =======================Fin LIVRE ==================
+
+
 
 def articles(request):
     return render(request, 'pages/articles.html' )
 
 def formulaire(request):
-    return render(request, 'pages/formulaire.html')
+    if request.method == "POST":
+      form = achatForm(request.POST)
+      if form.is_valid():
+        achat = form.save()
+      return redirect(achat)  
+    else: 
+      form = achatForm()
+    return render(request, 'pages/formulaire.html',{'form': form})
+
+def affichage_achat(request):
+  n_achats = achat.objects.all()
+  data = { 'n_achats': n_achats}
+  return render(request, 'pages/affichage_achat.html')
 
 def categories(request):
   return render(request, 'pages/categories.html')

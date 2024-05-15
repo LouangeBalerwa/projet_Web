@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import auteur, creationCompte,pensesPositives, livre, messageImage
+from .models import auteur, creationCompte,pensesPositives, livre, messageImage, achat
 
 
 class auteurForm(ModelForm):
@@ -25,4 +25,9 @@ class livreForm(ModelForm):
 class messageImgForm(ModelForm):
     class Meta:
         model = messageImage
-        fields = ['nom_auteur', 'image',]
+        fields = ['nom_auteur', 'image','date_mes',]
+        
+class achatForm(ModelForm):
+    class Meta:
+        model = achat
+        fields  =[ 'nom_livre', 'nombre_piece', 'matricule', 'Nom', 'email', 'telephone', 'pays', 'date_achat', ]

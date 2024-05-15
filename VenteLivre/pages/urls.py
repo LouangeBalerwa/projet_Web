@@ -26,12 +26,15 @@ urlpatterns = [
     path('affichage_penses', views.affichage_penses, name ='affichage_penses'),
     # =============Path Fin  penses_Positives ==========================================
     path('mesLivres', views.mes_livres, name = 'mesLivres'),
+    path('affichage_livre', views.affichage_livre, name = 'affichage_livre'),
+    
     path('messageImg', views.message_image, name = 'messageImg'),
     path('image_list', views.image_list, name ='image_list'),
     
     path('formulaire', views.formulaire, name='formulaire'),
+    path('affichage_achat', views.affichage_achat, name = 'affichage_achat'),
     path('categories', views.categories, name='categories'),
-    # path('livres', views.livres, name ='livres'),
+    
     path('penses', views.penses, name ='penses'),
     path('pub', views.publication, name ='pub'),
     path('article', views.articles, name='article'),

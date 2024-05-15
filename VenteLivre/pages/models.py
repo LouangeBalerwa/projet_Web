@@ -8,7 +8,7 @@ class auteur(models.Model):
     num_tel = models.IntegerField(default=0)
     pays = models.CharField(max_length=64, blank=True)
     ville = models.CharField(max_length=64, blank=True)
-    matricule = models.IntegerField(default=1)
+    matricule = models.IntegerField(default=0)
     
     def __str__(self):
         return self.nom_auteur
@@ -36,10 +36,12 @@ class livre(models.Model):
     
     def __str__(self):
         return self.Titre
+    def get_absolute_url(self):
+        return "affichage_livre"
     
 class pensesPositives(models.Model):
     TitreP = models.CharField(unique=True, max_length=200)
-    contenus = models.TextField(blank=True)
+    contenus = models.TextField(blank=False)
     nom_auteur = models.CharField(max_length=100)
     date= models.DateField(default=timezone.now)
     
@@ -53,6 +55,11 @@ class messageImage(models.Model):
     image = models.ImageField(upload_to='static/pages/images/', blank= False)
     date_mes = models.DateField(default=timezone.now)
     
+    def __str__(self):
+        return self.TitreP
+    def get_absolute_url(self):
+        return "affichage_penses"
+   
 class achat(models.Model):
     nom_livre = models.ForeignKey(livre, on_delete= models.DO_NOTHING, default=1)
     nombre_piece = models.IntegerField(default=1)
@@ -62,4 +69,9 @@ class achat(models.Model):
     telephone = models.IntegerField(default=0)
     pays = models.CharField(max_length=90, blank=True)
     date_achat = models.DateField(default=timezone.now)
+    
+    def __str__(self):
+        return self.TitreP
+    def get_absolute_url(self):
+        return "affichage_achat"
     

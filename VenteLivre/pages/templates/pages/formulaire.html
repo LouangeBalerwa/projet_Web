@@ -5,7 +5,17 @@
 {% block 'title' %}Formulaire d'achat{% endblock %}
 
 {% block 'content' %}
+<h1>Faire Achat</h1>
   <section id="acheter">
+    <form action = "{% url 'pages:formulaire' %}"  method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+
+      <input type="submit" name="" value="Envoyer"> 
+    
+  </form>
+  </section>
+  <!-- <section id="acheter">
     <form action="" method="post">
       <h1>Faire Achat</h1>
       <label for="name">Nom:</label>
@@ -34,7 +44,7 @@
         <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
       </div>
     </form>
-  </section>
+  </section> -->
   
 {% endblock %}
 

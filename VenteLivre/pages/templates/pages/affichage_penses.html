@@ -6,13 +6,20 @@
 
 {% block 'content' %}
     {% for pense in penses %}
-        <ul>
-            <li>{{ pense.TitreP }}</li>
-            <li>{{ pense.contenus}}</li> 
-            <li>{{ pense.nom_auteur }}</li>
-            <li>{{ pense.date}}</li>        
-        </ul>
+       <div>
+            <h3>{{ pense.TitreP }}</h3>
+            <p>{{ pense.contenus}}</p> 
+            <p>{{ pense.nom_auteur }}</p>
+            <p>{{ pense.date}}</p>    
+       </div>
     {% endfor %}
+
+    {% for image in images %}
+    <div>
+          
+   </div>
+   {% endfor %}
+
     <div>
         <img id="penseImg" src="{% static 'pages/images/penses1.jpg' %}" alt="Pense">
         <!-- <img id="penseImg" src="{% static 'pages/images/pense2.jpg' %}" alt="Pense">

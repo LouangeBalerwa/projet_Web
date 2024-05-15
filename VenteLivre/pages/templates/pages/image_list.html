@@ -5,13 +5,16 @@
 {% block 'title' %}Show_Images{% endblock %}
 
 {% block 'content' %}
-    
-            {% for image in images %}
-               <ul>
-                    <li>{{image.ajouter_auteur}}</li>
-                    <li>{{image.image}}</li>
-               </ul>
-            {% endfor %}
+    <div>
+      {% for image in images %}
+         <h2>{{image.nom_auteur}}</h2>
+         <p>{{image.image}}</p>
+         <p>{{image.date_mes}}</p>
+      {% endfor %}
+
+    </div>
+            
+      
     <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
         
 {% endblock %}
