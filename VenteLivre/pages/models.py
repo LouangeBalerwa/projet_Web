@@ -28,7 +28,7 @@ class creationCompte(models.Model):
 
 class livre(models.Model):
     Titre = models.CharField(unique=True, max_length=200)
-    photo = models.ImageField(upload_to='static/pages/images',blank=True)
+    photo = models.ImageField(upload_to='images', blank=True )
     fichier_pdf = models.FileField(upload_to='documents_pdf', blank=True)
     prix = models.IntegerField(default=0)
     date_pub = models.DateField(default=timezone.now)
@@ -52,13 +52,13 @@ class pensesPositives(models.Model):
     
 class messageImage(models.Model):
     nom_auteur = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='static/pages/images/', blank= False)
+    image = models.ImageField(upload_to='images', blank= False)
     date_mes = models.DateField(default=timezone.now)
     
     def __str__(self):
-        return self.TitreP
+        return self.nom_auteur
     def get_absolute_url(self):
-        return "affichage_penses"
+        return "image_list"
    
 class achat(models.Model):
     nom_livre = models.ForeignKey(livre, on_delete= models.DO_NOTHING, default=1)
@@ -71,7 +71,7 @@ class achat(models.Model):
     date_achat = models.DateField(default=timezone.now)
     
     def __str__(self):
-        return self.TitreP
+        return self.Nom  
     def get_absolute_url(self):
         return "affichage_achat"
     

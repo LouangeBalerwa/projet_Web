@@ -146,11 +146,11 @@ def message_image(request):
 # ------------------Show penses du jours image -----------------------------
 def image_list(request):
   try:
-    images = messageImage.objects.all()
+    messages = messageImage.objects.all()
   except:
     raise Http404("Cette page n'exciste pas!!!")
   
-  data =  {'images': images}
+  data =  {'messages': messages}
   
   return render(request, 'pages/image_list.html', data)
 
