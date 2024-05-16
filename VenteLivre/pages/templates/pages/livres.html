@@ -5,7 +5,7 @@
 {% block 'title' %}Nos Livres{% endblock %}
 
 {% block 'content' %}
-    <h1>Nos Livres</h1>
+    <h1>Publier un Livre</h1>
     
     <!-- <div class="livre">
         <img id="livreLoin" src="{% static 'pages/images/LivreLoin.jpg' %}" alt="livres">
@@ -14,7 +14,7 @@
     </div>
     <div> -->
 
-        <form action = "{% url 'pages:mesLivres' %}"  method="POST">
+        <form action = "{% url 'pages:mesLivres' %}"  enctype="multipart/form-data" method="POST" >
             {% csrf_token %}
             {{form.as_p}}
       

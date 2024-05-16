@@ -5,6 +5,14 @@
 {% block 'title' %}Show_Penses{% endblock %}
 
 {% block 'content' %}
+    <header>
+        <ul class="menu">
+
+            <li><a href="{% url 'pages:messageImg' %}">Publier une Photo</a></li>
+            <li><a href="{% url 'pages:pense_positives' %}">Puplier un texte</a></li>
+            <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
+        </ul>
+    </header>
     {% for pense in penses %}
        <div>
             <h3>{{ pense.TitreP }}</h3>
@@ -27,11 +35,5 @@
         <img id="penseImg" src="{% static 'pages/images/penses4.jpg' %}" alt="Pense"> -->
     </div>
     <div>
-        <a href="{% url 'pages:messageImg' %}">Publier une Photo</a>
-        <br>
-        <a href="{% url 'pages:pense_positives' %}">Puplier un texte</a>
-        <br>
-        <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
-    </div>
-        
+
 {% endblock %}

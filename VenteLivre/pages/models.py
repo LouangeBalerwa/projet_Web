@@ -26,6 +26,7 @@ class creationCompte(models.Model):
     def get_absolute_url(self):
         return "affichage_compte"
 
+# ================== classe Livre===================================
 class livre(models.Model):
     Titre = models.CharField(unique=True, max_length=200)
     photo = models.ImageField(upload_to='images', blank=True )
@@ -39,6 +40,7 @@ class livre(models.Model):
     def get_absolute_url(self):
         return "affichage_livre"
     
+# ================== classe carnet parole===================================
 class pensesPositives(models.Model):
     TitreP = models.CharField(unique=True, max_length=200)
     contenus = models.TextField(blank=False)
@@ -50,6 +52,7 @@ class pensesPositives(models.Model):
     def get_absolute_url(self):
         return "affichage_penses"
     
+# ================== classe carnet Image===================================
 class messageImage(models.Model):
     nom_auteur = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images', blank= False)
@@ -59,7 +62,7 @@ class messageImage(models.Model):
         return self.nom_auteur
     def get_absolute_url(self):
         return "image_list"
-   
+# ================== classe faire Achats=================================== 
 class achat(models.Model):
     nom_livre = models.ForeignKey(livre, on_delete= models.DO_NOTHING, default=1)
     nombre_piece = models.IntegerField(default=1)

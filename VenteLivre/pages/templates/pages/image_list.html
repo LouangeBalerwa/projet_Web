@@ -8,7 +8,9 @@
     <div>
       {% for message in messages %}
          <h2>{{message.nom_auteur}}</h2>
-         <p>{{message.image.url}}</p>
+          {% if message.image %}
+            <img src = "/media/{{message.image}}" width="96" height ="96">
+          {% endif %}
          <p>{{message.date_mes}}</p>
       {% endfor %}
 

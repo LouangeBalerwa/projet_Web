@@ -5,15 +5,20 @@
 {% block 'title' %}Puplication des Carnet{% endblock %}
 
 {% block 'content' %} 
-    <h1>Puplication des Carnet</h1> 
+    <h1>Puplication un Carnet</h1> 
   <section id="">
     <form action = "{% url 'pages:messageImg' %}"  method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       {{form.as_p}}
 
       <input type="submit" name="" value="Envoyer"> 
+    <div>
+      <a href="{% url 'pages:affichage_penses' %}"><input type="button" value="Retour"></a>
+    </div>
     
   </form>
+  
+
   </section>
 
 {% endblock %}

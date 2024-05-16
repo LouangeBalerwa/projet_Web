@@ -8,6 +8,10 @@ from django import forms
 # ========================Page d'accueille=================
 def home(request):  
     return render(request, 'pages/home.html')
+
+# ========================Page de Menu principale =================
+def categories(request):
+  return render(request, 'pages/categories.html')
 # ======================Views pour les Auteurs ======================
 
 #  ------------------add auteur -----------------------------
@@ -57,7 +61,6 @@ def supprime_auteur(request, id_auteur):
     return redirect('/affichage_auteur')   
   
   return render(request, "pages/supprime_auteur.html", {'data': data})
-
 # ======================FIN Auteurs ======================
 
 # =======================lES COMPTES ==================
@@ -159,37 +162,22 @@ def image_list(request):
 # =======================view LIVRE ===================
 #  ------------------Add livre -----------------------------
 def mes_livres(request):
+  if request.method == 'POST':
+      form = livreForm(request.POST, request.FILES)
+      if form.is_valid():
+        form.save()
+        return redirect('/affichage_livre')
+  else:
+        form = livreForm()
+  return render(request, 'pages/livres.html',{'form': form})
   
-  if request.method == "POST":
-    
-    # try:
-    
-      print("=======>",request.POST)
-      print("=======>",request.FILES)
-      auteur_obj=auteur.objects.get(pk=2)
-      
-      data = livre(
-          Titre=request.POST["Titre"],
-          auteur=auteur_obj,
-          photo=request.POST["photo"] ,
-          fichier_pdf=request.POST['fichier_pdf'], 
-          prix=request.POST["prix"],
-         
-      )
-      
-      data.save()
-      return redirect('/affichage_livre') 
-        
-    # except:
-    #     print("Error")
-    #     return render(request, 'pages/livres.html',{'form': livreForm})
-      
-  else:     
-    return render(request, 'pages/livres.html',{'form': livreForm})
   
 #  ------------------Show Livres -----------------------------
 def affichage_livre(request):
-  livres = livre.objects.all()
+  try:
+    livres = livre.objects.all()
+  except:
+    raise Http404("Cette page n'exciste pas!!!")
   data = { 'livres': livres}
   return render(request, 'pages/affichage_livre.html', data)
 
@@ -213,17 +201,9 @@ def formulaire(request):
 def affichage_achat(request):
   n_achats = achat.objects.all()
   data = { 'n_achats': n_achats}
-  return render(request, 'pages/affichage_achat.html')
-
-def categories(request):
-  return render(request, 'pages/categories.html')
+  return render(request, 'pages/affichage_achat.html',data)
 
 
-def penses(request):
-  return render(request, 'pages/pensesPositives.html')
-
-def publication(request):
-  return render(request, 'pages/publication.html')
 
 def about(request):
   return render(request, 'pages/about.html')

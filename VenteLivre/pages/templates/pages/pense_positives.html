@@ -5,14 +5,17 @@
 {% block 'title' %}Penses Positives{% endblock %}
 
 {% block 'content' %}
-    <h1>Penses Positives</h1>
+    <h1>Puplication un Carnet</h1>
     <div class="pense">
         <form action = "{% url 'pages:pense_positives' %}"  method="POST">
             {% csrf_token %}
             {{form.as_p}}
       
-            <input type="submit" name="" value="Envoyer">    
+            <input type="submit" name="" value="Envoyer"> 
+        <div>
+            <a href="{% url 'pages:affichage_penses' %}"><input type="button" value="Retour"></a>
+        </div>   
     </div>
-
+   
    
 {% endblock %}

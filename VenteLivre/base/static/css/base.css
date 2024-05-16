@@ -196,38 +196,30 @@ form {
     cursor: pointer;
   }
 /* =============Achsat Livres================= */
-.livre {
+
+/* .article {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
-  justify-content: space-around;
-}
-
-.livre {
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 20%;
-  background-color: #fff;
-  padding: 15px;
   border-radius: 6px;
-  margin-bottom: 35px;
   
+} */
+
+
+.article img {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
 }
 
-.livre img {
-  width: 250px;
-  height: 200px;
-  margin-bottom: 5px;
-}
-
-.livre p {
+.article p {
   text-align: center;
-  font-size: 16px;
+  font-size: 10px;
 }
 
-.livre a {
+.article a {
   margin-top: 10px;
   font-size: 16px;
   text-decoration: 0;
@@ -237,6 +229,7 @@ form {
   color: #fff;
   border-radius: 6px;
 }
+
 .pense #penseImg{
   margin-top: 20px;
   width: 300px;
@@ -255,7 +248,7 @@ form {
   bottom: 10px; 
   left: 50%; 
   transform: translateX(-50%); 
-  color:white;
+  color:black;
   text-align: center; 
 }
 .footer-text span {
