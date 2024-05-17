@@ -5,7 +5,7 @@
 {% block 'title' %}Show_Auteur{% endblock %}
 
 {% block 'content' %}
-    <h1>Listes des Auteurs<a href ="ajouter_auteur" class="btn_save">Ajouter</a></h1>
+    <h1>Listes des Auteurs {% if perms.pages.add_auteur %}<a href ="ajouter_auteur" class="btn_save">Ajouter</a> {% endif %}</h1>
     <br>
     <table  class="tableau" >
         <thead>
@@ -30,8 +30,12 @@
                     <td>{{ auteur.matricule }}</td>
                     <td>{{ auteur.pays }}</td>
                     <td>{{ auteur.ville }}</td>
-                    <td><a href="{% url 'pages:modifier_auteur' auteur.id %}" class="btn_edit">Editer</a>
+                    <td>{% if perms.pages.change_auteur %}
+                        <a href="{% url 'pages:modifier_auteur' auteur.id %}" class="btn_edit">Editer</a>
+                        {% endif %}
+                        {% if perms.pages.delete_auteur %}
                         <a href="{% url 'pages:supprime_auteur' auteur.id %}" class="btn_supprime"> X </a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}

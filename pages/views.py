@@ -1,9 +1,13 @@
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.http import Http404
 from .forms import auteurForm, compteForm, pensesForm, livreForm, messageImgForm, achatForm
-from .models import auteur, creationCompte,pensesPositives, messageImage,livre, achat
+from .models import auteur, creationCompte,pensesPositives, messageImage,livre,achat
 from django import forms 
+from django.contrib.auth.models import Group
+
+
 
 # ========================Page d'accueille=================
 def home(request):  
@@ -27,6 +31,8 @@ def ajouter_auteur(request):
   return render(request, "pages/ajouter_auteur.html", {'form': form})
 
 #  ------------------Show auteur -----------------------------
+
+
 def affichage_auteur(request):
   try:
     auteurs  = auteur.objects.all()
@@ -38,6 +44,7 @@ def affichage_auteur(request):
   return render(request, 'pages/affichage_auteur.html', data) 
 
 #  ------------------Edit auteur -----------------------------
+
 def modifier_auteur(request, id_auteur):
   # recuperation de donnee pour un auteur specifique
   data = get_object_or_404(auteur, id=id_auteur)
@@ -53,6 +60,7 @@ def modifier_auteur(request, id_auteur):
   return render(request, "pages/modifier_auteur.html", {'form': form, 'data': data})
 
 #  ------------------Delete auteur -----------------------------
+
 def supprime_auteur(request, id_auteur):
   data = get_object_or_404(auteur, id=id_auteur)
   # data = auteur.objects.get(id=id_auteur)
@@ -77,6 +85,7 @@ def creation_compte(request):
   return render(request, "pages/compte.html", {'form': form})
 
 #  ------------------Show compte -----------------------------
+@login_required
 def affichage_compte(request):
   try:
     comptes = creationCompte.objects.all()
@@ -87,7 +96,8 @@ def affichage_compte(request):
   
   return render(request, 'pages/affichage_compte.html', data) 
   
-  #  ------------------Edit Compte -----------------------------
+
+#  ------------------Edit Compte -----------------------------
 def modifier_compte(request, id_compte):
   # recuperation de donnee pour un compte specifique
   data = get_object_or_404(creationCompte, id=id_compte)
@@ -102,6 +112,7 @@ def modifier_compte(request, id_compte):
   return render(request, "pages/modifier_compte.html", {'form': form, 'data': data})
 
 #  ------------------Delete Compte -----------------------------
+
 def supprime_compte(request, id_compte):
   data = get_object_or_404(creationCompte, id=id_compte)
   if request.method == "POST":
@@ -124,13 +135,15 @@ def pense_positive(request):
   return render(request, "pages/pense_positives.html", {'form': form})
 
 #  ------------------Show penses du jours -----------------------------
+ 
 def affichage_penses(request):
   try:
     pense = pensesPositives.objects.all()
+    messages = messageImage.objects.all()
   except:
     raise Http404("Cette page n'exciste pas!!!")
   
-  data =  {'penses':pense}
+  data =  {'penses':pense, 'messages': messages}
   
   return render(request, 'pages/affichage_penses.html', data) 
 
@@ -161,6 +174,7 @@ def image_list(request):
 
 # =======================view LIVRE ===================
 #  ------------------Add livre -----------------------------
+# @permission_required('pages.add_livre')
 def mes_livres(request):
   if request.method == 'POST':
       form = livreForm(request.POST, request.FILES)
@@ -183,11 +197,7 @@ def affichage_livre(request):
 
 # =======================Fin LIVRE ==================
 
-
-
-def articles(request):
-    return render(request, 'pages/articles.html' )
-
+# =======================View faire un Achat ==================
 def formulaire(request):
     if request.method == "POST":
       form = achatForm(request.POST)
@@ -203,10 +213,14 @@ def affichage_achat(request):
   data = { 'n_achats': n_achats}
   return render(request, 'pages/affichage_achat.html',data)
 
+# =======================Fin faire un Achat ==================
 
+# =============View telechargement PDF ========================
+@login_required
+def telecharger_pdf(request):
+    return render(request, 'pages/affichage_achat.html')
 
+# =============View about  A propos ============================
 def about(request):
   return render(request, 'pages/about.html')
 
-def  contact(request):
-  return render(request, 'pages/contact.html')

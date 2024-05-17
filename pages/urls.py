@@ -41,7 +41,12 @@ urlpatterns = [
     path('affichage_achat', views.affichage_achat, name = 'affichage_achat'),
     # =============Path fin Faire un ACHAT ==========================================
     
+    # =============Path  telechargement PDF ========================
+    # path('telecharger_pdf/<int:livre_id>', views.telecharger_pdf, name='telecharger_pdf'),
+    path('telecharger_pdf', views.telecharger_pdf, name='telecharger_pdf'),
     # =============Path about  A propos ==========================================
     path('about', views.about, name='about'),
-   
+
+    
+
 ]

@@ -6,7 +6,7 @@
 <main>
 	<h1>Edit Profile {{ user.username }}</h1>
 
-	<form action="{% url 'change-profile' %}" method="POST">
+	<form action="{% url 'accounts:change-profile' %}" method="POST">
 		{% csrf_token %}
 		{{ form.as_p }}
 
@@ -14,7 +14,7 @@
 			<input type="submit" value="Submit">
 		</p>
 		<p>
-			<a href="{% url 'profile' %}">
+			<a href="{% url 'accounts:profile' %}">
 				<input type="button" value="Cancel">
 			</a>
 		</p>

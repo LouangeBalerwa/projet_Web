@@ -62,6 +62,7 @@ class messageImage(models.Model):
         return self.nom_auteur
     def get_absolute_url(self):
         return "image_list"
+    
 # ================== classe faire Achats=================================== 
 class achat(models.Model):
     nom_livre = models.ForeignKey(livre, on_delete= models.DO_NOTHING, default=1)

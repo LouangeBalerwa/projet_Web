@@ -21,19 +21,14 @@
             <p>{{ pense.date}}</p>    
        </div>
     {% endfor %}
+   <div>
+    {% for message in messages %}
+       <h2>{{message.nom_auteur}}</h2>
+        {% if message.image %}
+          <img src = "/media/{{message.image}}" width="96" height ="96">
+        {% endif %}
+       <p>{{message.date_mes}}</p>
+    {% endfor %}
 
-    {% for image in images %}
-    <div>
-          
-   </div>
-   {% endfor %}
-
-    <div>
-        <img id="penseImg" src="{% static 'pages/images/penses1.jpg' %}" alt="Pense">
-        <!-- <img id="penseImg" src="{% static 'pages/images/pense2.jpg' %}" alt="Pense">
-        <img id="penseImg" src="{% static 'pages/images/penses3.jpg' %}" alt="Pense">
-        <img id="penseImg" src="{% static 'pages/images/penses4.jpg' %}" alt="Pense"> -->
-    </div>
-    <div>
-
+  </div>
 {% endblock %}
