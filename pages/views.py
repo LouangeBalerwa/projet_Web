@@ -6,8 +6,11 @@ from .forms import auteurForm, compteForm, pensesForm, livreForm, messageImgForm
 from .models import auteur, creationCompte,pensesPositives, messageImage,livre,achat
 from django import forms 
 from django.contrib.auth.models import Group
+# # To create a group:
+# group = Group.objects.create(name="visiteurs")
 
-
+# Associer un utilisateur au groupe
+utilisateurs = Group.objects.get(name='visiteurs')
 
 # ========================Page d'accueille=================
 def home(request):  
@@ -174,7 +177,7 @@ def image_list(request):
 
 # =======================view LIVRE ===================
 #  ------------------Add livre -----------------------------
-# @permission_required('pages.add_livre')
+@permission_required('pages.add_livre', raise_exception=True)
 def mes_livres(request):
   if request.method == 'POST':
       form = livreForm(request.POST, request.FILES)

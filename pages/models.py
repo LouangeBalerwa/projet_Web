@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 # ================== classe Auteur===================================
 class auteur(models.Model):
     nom_auteur = models.CharField(max_length=100, unique = True)
