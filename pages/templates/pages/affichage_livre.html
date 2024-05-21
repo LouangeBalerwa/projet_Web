@@ -5,57 +5,30 @@
 {% block 'title' %}Articles{% endblock %}
 
 {% block 'content' %}
-    <header>
-      <ul class="menu">
-        <li><a href="{% url 'pages:mesLivres' %}">Publication Un livre</a></li>
-        <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
-      </ul>
-    </header>
-    <style>
-      .article {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border-radius: 6px;
-      }
-      img {
-        width: 200px;
-        height: 150px;
-        margin: 10px;
-      }
-      .article p {
-        font-size: 10px;
-      }
-      .article a {
-        margin-top: 10px;
-        font-size: 16px;
-        text-decoration: 0;
-        background-color: blue;
-        padding: 5px 60px;
-        columns: #fff;
-        color: #fff;
-        border-radius: 6px;
-      }
-      
-    </style>
-
-    <h1>NOS LIVRES</h1>
-    <div class="article">
+<section class="livres">  
         {% for livre in livres%}
-          <h2>{{livre.Titre}}</h2>
-        {% if livre.photo %}
-          <img src = "/media/{{livre.photo}}">
-        {% endif %}
-        <p>Prix : {{livre.prix}} $</p>
-        <p>Date de publication: {{livre.date_pub}}</p>
-        <p>Auteur : {{livre.auteur}}</p>
-        <a href="{% url 'pages:formulaire'%}">Acheter</a>
-        <br>
+        <div class="livre">
+            <h2>{{livre.Titre}}</h2>
+          {% if livre.photo %}
+            <img src = "/media/{{livre.photo}}">
+          {% endif %}
+          <p>Prix : {{livre.prix}} $</p>
+          <p>Date de publication: {{livre.date_pub}}</p>
+          <p>Auteur : {{livre.auteur}}</p>
+          <a href="{% url 'pages:formulaire'%}">Acheter</a>
+          <br>
+        </div>
       {% endfor %}
-        
-    </div>
+      <div>
+        <ul class="menu_livre">
+          <li><a href="{% url 'pages:mesLivres' %}">Publication Un livre</a></li> 
+          <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
+        </ul>
+      </div>
+       
+  
+</section>
+    
 {% endblock %}
 
 

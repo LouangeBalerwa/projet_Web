@@ -8,10 +8,13 @@
 	<h1>Account Login</h1>
 
 	{% if user.is_authenticated %}
-	<p>You are already logged in. 
-		<a href="{% url 'accounts:profile' %}">Go to Profile</a>
-	</p>
-	
+	<p>Vous etes connecter: 
+        <a href="{% url 'accounts:profile' %}" id = "retour">Voir le Profile</a>
+      </p>
+	  <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+		<input type="submit" value="Log Out">
+    </form>
 
 	{% else %}
 	<form action="{% url 'login' %}" method="POST">

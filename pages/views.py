@@ -163,15 +163,15 @@ def message_image(request):
     return render(request, 'pages/messageImg.html.',{'form': form})
 
 # ------------------Show penses du jours image -----------------------------
-def image_list(request):
-  try:
-    messages = messageImage.objects.all()
-  except:
-    raise Http404("Cette page n'exciste pas!!!")
+# def image_list(request):
+#   try:
+#     messages = messageImage.objects.all()
+#   except:
+#     raise Http404("Cette page n'exciste pas!!!")
   
-  data =  {'messages': messages}
+#   data =  {'messages': messages}
   
-  return render(request, 'pages/image_list.html', data)
+#   return render(request, 'pages/image_list.html', data)
 
 # =======================FIN PENSES POSITIVES ==================
 

@@ -11,35 +11,30 @@
     <meta name="description" content="Vente en ligne">
     <meta name="author" content="Louange Balerwa">
     <title>Vente_livre</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/bases.css' %}" type="text/css">
 </head>
 <body style="background-image:url('{% static 'pages/images/image1.jpg' %}'); background-repeat: no-repeat;background-size: cover; background-position: center center">
-  <div>
-    <h1 id="titre">VENTE DE LIVRES</h1>
-    <p class="texteP"><em>Welcome!</em></p>
-    <p class="texteP">Bienvenus sur notre site de Vente de Livres en ligne! <br/>
-      Ici nous vendons de livres de tout genres.
-    </p>
-    <br>
-    <!-- <a href="{% url 'login' %}">
-      <button id="btn_entrer">Login</button>
-    </a> -->
-    <a href="{% url 'pages:categories' %}">
-      <button id="btn_entrer">Entrer</button>
-    </a>
-  </div>
+  <section class="accueil">
+    <div>
+      <h1 id="titreAcueil">VENTE DE LIVRES</h1>
+      <p class="texteAcueil"><em>Welcome!</em></p>
+      
+      <a href="{% url 'pages:categories' %}">
+        <button id="btn_entrer">Entrer</button>
+      </a>
+     <!-- <a href="{% url 'login' %}">
+        <button id="btn_entrer">Login</button>
+      </a> -->
+    
+    </div>
+  </section>
+  
   
 </body>
-<footer>
-  <div class="footer-text">
-    <!-- Realisateur -->
-    Réalisé par <span>louangebalerwa</span> | Tous les droits sont reservés. 
-    <p>&copy; Vente de livres 2024</p>
-  </p>
-</div>
-  </footer>
 </html>
 
-
-
+<!-- 
+<p class="texteB">Bienvenus sur notre site de Vente de Livres en ligne! <br/>
+  Ici nous vendons de livres de tout genres.
+</p>  -->
 

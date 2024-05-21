@@ -1,0 +1,321 @@
+/** base.css **/
+
+/* =======faire la resposivites======== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  main {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  body {
+    position: relative;
+    font-size: 12px;
+  }
+}
+
+/* =========Pade d'accueil principale========= */
+#titreAcueil{
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  padding: 20px;
+  margin: 30px;
+}
+.texteAcueil{
+  font-size: 50px;
+  margin-top: 90px;
+  text-align: center;
+  color: black
+}
+.accueil a{
+  text-decoration: none;
+}
+#btn_entrer{
+  display: flex;
+  padding: 15px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25%;
+  background-color: white;
+  margin: auto;
+  border: 0;
+  transition: 0.3s;
+  color:black;
+  cursor: pointer;
+  width: 100px;
+  height: 50px; 
+}
+#btn_entrer:hover {
+  background-color: rgb(116, 116, 119);
+}
+
+
+/* ===========Page categories et autre=========== */
+
+body {
+  font-family: Arial, sans-serif;
+  
+  background-color: green ;
+
+}
+h1{
+  color: white;
+  text-align: center;
+}
+
+/* =============header du menu principale==========*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: #797676; */
+  background-color: rgba(159, 240, 143, 0.8);
+  z-index: 10;
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  margin: 50px 10px;
+  list-style: none;
+}
+.menu li a {
+  position: relative;
+  font-size: 20px;
+  text-decoration: 0;
+  color: black;
+}
+.menu li a:hover {
+  color: white;
+}
+/* ==========================Boutons vers Article================ */
+.art a{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centre les boutons verticalement */
+  width: 100%; /* Prend toute la largeur de la page */
+  margin: 0 auto; /* Centre horizontalement le conteneur */
+  text-decoration: none;
+}
+.btn_lien{
+  display: inline-block; /* Permet aux boutons de se comporter comme des blocs en ligne */
+  padding: 10px 20px; /* Marge et padding pour les boutons */
+  background-color: white; /* Couleur de fond bleue */
+  color: black; /* Couleur de texte blanche */
+  border: solid 3px rgb(248, 252, 3); 
+  cursor: pointer; /* Change le curseur en pointeur lors du survol */
+  margin-top: 100px;
+  border-radius: 25%;
+
+}
+/* ========================Livres======================= */
+.livres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.livre {
+  width: 300px;
+  height: 400px;
+  border: 1px solid blue;
+  padding: 5px;
+  text-align: center;
+  background-color: white;
+  margin: 5px;
+}
+
+.livre  img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.livre h2 {
+  font-size: 16px;
+  margin-bottom: 3px;
+  color: red;
+}
+
+.livre p {
+  line-height: 1.6;
+}
+.menu_livre {
+  display: flex;
+}
+.menu_livre li {
+  list-style: none;
+}
+.menu_livre li a {
+  position: relative;
+  font-size: 20px;
+  text-decoration: 0;
+  color: blue;
+  margin: 5px ;
+  background-color: white;
+  border-radius: 6px;
+  padding: 5px;
+}
+.menu_livre li a:hover {
+  color: red;
+}
+.livre a {
+  margin: 5px;
+  font-size: 13px;
+  text-decoration: none;
+  background-color: blue;
+  padding: 5px 40px;
+  color: #fff;
+  border-radius: 6px;
+}
+.livre a:hover {
+  color: red;
+}
+/* ========================Autres======================= */
+.article {
+  width: 300px;
+  height: 300px;
+  border: 1px solid blue;
+  padding: 5px;
+  text-align: center;
+  background-color: white;
+  margin: 5px;
+}
+.article h2{
+  font-size: 20px;
+  margin-bottom: 3px;
+  color: red;
+}
+.article h3{
+  font-size: 15px;
+  margin-bottom: 3px;
+  color: black;
+}
+.article p {
+  width: 300px;
+  font-size: large;
+  font-size: 40px;
+}
+.articleP {
+  border: 2px solid black;
+  text-align: center;
+}
+.articleP h2{
+ 
+  color: #000;
+ 
+}
+#retour{
+  font-size: 20px;
+  text-decoration: 0;
+  color: blue;
+  margin: 10px ;
+  background-color: white;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+
+/* ===============Formulaires===============*/
+
+form {
+    width: 500px;
+    margin: 20px auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+
+ 
+  #acheter button {
+    margin-top: 30px;
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    transition: 0.5s;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+  }
+  #publcation button {
+    margin-top: 5px;
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 0;
+    transition: 0.5s;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+  }
+/* =============Achsat Livres================= */
+
+/* .article {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 6px;
+  
+} */
+
+
+.article img {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+}
+
+.article p {
+  text-align: center;
+  font-size: 10px;
+}
+
+
+
+.pense #penseImg{
+  margin-top: 20px;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 5px blue;
+}
+/* ============About============ */
+.about{
+  padding: 30px;
+  text-align: center;
+}
+
+/* =================bas de la page================= */
+.footer-text {
+  position: absolute;
+  bottom: 5px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  color:black;
+  text-align: center; 
+}
+.footer-text span {
+  color:white;
+}

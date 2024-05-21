@@ -10,20 +10,19 @@
         <ul class="menu">
           <li><a href="{% url 'pages:home'%}">Home Page</a></li>
           <li><a href="{% url 'login' %}">Login</a></li>
-          <li><a href="{% url 'pages:affichage_livre' %}">Voir Livres</a></li>
           <li><a href="{% url 'pages:affichage_auteur'%}">Voir Auteurs</a></li>
-          <li><a href="{% url 'pages:affichage_compte'%}">Voir Comptes</a></li>
-          <li><a href="{% url 'pages:affichage_penses'%}">Penses du Jours</a></li>
+          <li><a href="{% url 'pages:affichage_compte'%}">Creer un Comptes</a></li>
           <li><a href="{% url 'pages:about' %}">About Me</a></li>
         </ul>
-      </header>
-      
-    <!-- section mes Articles-->
-    
-    <div >
-    <img id="myImage" src="{% static 'pages/images/image_bib.jpg' %}" alt="Biblioteque">
-    </div>
-    <!-- <a href="{% url 'login' %}">
-      <button>Login</button>
-    </a> -->
+    </header>
+    <section class="arts">
+        <div class="art">
+          <a href="{% url 'pages:affichage_livre' %}">
+            <button class="btn_lien">Voir Livres!</button>
+          </a>
+          <a href="{% url 'pages:affichage_penses'%}">
+            <button class="btn_lien">Voir Penses du jour!</button>
+          </a>
+        </div>
+    </section>
 {% endblock %}

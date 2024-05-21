@@ -24,10 +24,9 @@ urlpatterns = [
     
     # =============Path about penses_Positives ==========================================
     path('pense_positives', views.pense_positive, name = 'pense_positives'),
-    path('affichage_penses', views.affichage_penses, name ='affichage_penses'),
-    
     path('messageImg', views.message_image, name = 'messageImg'),
-    path('image_list', views.image_list, name ='image_list'),
+    path('affichage_penses', views.affichage_penses, name ='affichage_penses'),
+    # path('image_list', views.image_list, name ='image_list'),
     # =============Path Fin  penses_Positives ==========================================
     
     # =============Path about livre ==========================================

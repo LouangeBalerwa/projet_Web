@@ -6,19 +6,14 @@
 
 {% block 'content' %}
     <h1>Publier un Livre</h1>
-    
-    <!-- <div class="livre">
-        <img id="livreLoin" src="{% static 'pages/images/LivreLoin.jpg' %}" alt="livres">
-        <h2>$10.05</h2>
-        <a href="{% url 'pages:formulaire'%}">Acheter</a>
-    </div>
-    <div> -->
-
         <form action = "{% url 'pages:mesLivres' %}"  enctype="multipart/form-data" method="POST" >
             {% csrf_token %}
             {{form.as_p}}
       
             <input type="submit" name="" value="Envoyer"> 
-        <a href="{% url 'pages:categories' %}">Vers Page Menus</a>
+
+        <div>
+        <a href="{% url 'pages:categories' %}" id = "retour">Vers Page Menus</a>
+      </div>
     </div>
 {% endblock %}
