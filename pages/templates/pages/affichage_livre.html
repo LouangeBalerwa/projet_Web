@@ -15,8 +15,8 @@
           <p>Prix : {{livre.prix}} $</p>
           <p>Date de publication: {{livre.date_pub}}</p>
           <p>Auteur : {{livre.auteur}}</p>
-          <a href="{% url 'pages:formulaire'%}">Acheter</a>
-          <br>
+          <!-- <a href="{% url 'pages:formulaire'%}">Acheter</a> -->
+          <a href="{{livre.fichier_pdf.url}}">Telechargement PDF</a>
         </div>
       {% endfor %}
       <div>
