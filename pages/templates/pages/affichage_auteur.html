@@ -30,7 +30,7 @@
                     <td>{{ auteur.matricule }}</td>
                     <td>{{ auteur.pays }}</td>
                     <td>{{ auteur.ville }}</td>
-                    <td>{% if perms.pages.change_auteur %}
+                    <td>{% if perms.pages.change_compte %}
                         <a href="{% url 'pages:modifier_auteur' auteur.id %}" class="btn_edit">Editer</a>
                         {% endif %}
                         {% if perms.pages.delete_auteur %}

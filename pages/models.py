@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
 from django.utils import timezone
 
 
@@ -29,12 +31,13 @@ class creationCompte(models.Model):
 
 # ================== classe Livre===================================
 class livre(models.Model):
+    auteur = models.ForeignKey(auteur, on_delete= models.DO_NOTHING, default=1)
     Titre = models.CharField(unique=True, max_length=200)
     photo = models.ImageField(upload_to='images', blank=True )
     fichier_pdf = models.FileField(upload_to='documents_pdf', blank=True)
     prix = models.IntegerField(default=0)
     date_pub = models.DateField(default=timezone.now)
-    auteur = models.ForeignKey(auteur, on_delete= models.DO_NOTHING, default=1)
+    
     
     def __str__(self):
         return self.Titre
