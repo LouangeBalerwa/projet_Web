@@ -64,15 +64,16 @@ body {
 h1{
   color: white;
   text-align: center;
+  padding-top: 20px;
 }
 
-header {
+.principale .contenaires header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
   padding: 0 10%;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;

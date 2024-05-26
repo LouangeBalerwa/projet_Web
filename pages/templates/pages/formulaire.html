@@ -11,9 +11,6 @@
       {% csrf_token %}
       {{form.as_p}}
       <input type="submit" name="" value="Envoyer"> 
-      <div  class="retour_btn_form">
-        <a href="{% url 'pages:categories' %}" id = "retour_form">Vers Page Menus</a>
-      </div>
   </form>
  </div>
 {% endblock %}

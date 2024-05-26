@@ -15,14 +15,13 @@
           <p>Prix : {{livre.prix}} $</p>
           <p>Date de publication: {{livre.date_pub}}</p>
           <p>Auteur : {{livre.auteur}}</p>
-          <a href="{% url 'pages:formulaire'%}">Acheter</a>
-          <!-- <a href="{{livre.fichier_pdf.url}}">Telechargement PDF</a> -->
+          <a href="{{livre.fichier_pdf.url}}">Telechargement PDF</a>
         </div>
       {% endfor %}
       <div>
         <ul class="menu_livre">
           <li><a href="{% url 'pages:mesLivres' %}">Publication Un livre</a></li> 
-          <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
+          <li><a href="{% url 'pages:formulaire'%}">Acheter</a></li>
         </ul>
       </div>  
 </section>

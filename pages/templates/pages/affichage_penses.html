@@ -21,7 +21,7 @@
             <p>{{ pense.date}}</p>   
        </div>
     {% endfor %}
-    <hr>
+    
     {% for message in messages %}
       <div class ="articleP">
           {% if message.image %}
@@ -35,9 +35,9 @@
       <ul class="menu_livre">
         <li><a href="{% url 'pages:messageImg' %}">Publier une Photo</a></li>
         <li><a href="{% url 'pages:pense_positives' %}">Puplier un texte</a></li>
-        <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
       </ul>
     </div>
+
 
 
 {% endblock %}

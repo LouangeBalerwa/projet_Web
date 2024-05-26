@@ -78,6 +78,7 @@ def supprime_auteur(request, id_auteur):
 
 # =======================lES COMPTES ==================
 # ----------------------Add compte---------------------
+@login_required
 def creation_compte(request):
   if request.method == "POST":
     form = compteForm(request.POST)
@@ -103,6 +104,7 @@ def affichage_compte(request):
   
 
 #  ------------------Edit Compte -----------------------------
+@login_required
 def modifier_compte(request, id_compte):
   # recuperation de donnee pour un compte specifique
   data = get_object_or_404(creationCompte, id=id_compte)
