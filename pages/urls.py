@@ -41,8 +41,12 @@ urlpatterns = [
     # =============Path fin Faire un ACHAT ==========================================
     
     # =============Path  telechargement PDF ========================
-    # path('telecharger_pdf/<int:livre_id>', views.telecharger_pdf, name='telecharger_pdf'),
-    path('telecharger_pdf', views.telecharger_pdf, name='telecharger_pdf'),
+    # # path('telecharger_pdf/<int:livre_id>', views.telecharger_pdf, name='telecharger_pdf'),
+    # path('telecharger_pdf', views.telecharger_pdf, name='telecharger_pdf'),
+    
+    
+    #======================Emvoit message===================
+    path('contact_send', views.contact_send, name='contact_send'),
     # =============Path about  A propos ==========================================
     path('about', views.about, name='about'),
 

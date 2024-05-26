@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ compte.id }}</td>
                     <td>{{ compte.matricule }}</td> 
-                    <td>{{ compte.type_compte }}</td>
+                    <td>{% if perms.pages.delete_auteur %}{{ compte.type_compte }} {% endif %}</td>
                     <td>{{ compte.balance}}</td>
                     <td><a href="{% url 'pages:modifier_compte' compte.id %}" class="btn_edit">Editer</a>
                         <a href="{% url 'pages:supprime_compte' compte.id %}" class="btn_supprime"> Supprimer </a>
@@ -30,7 +30,7 @@
                 </tr>
             {% endfor %}
         </tbody>
-        <tfoot>
+        <tfoot>                        
             <tr>
                 <td colspan="5">
                     Liste des Comptes!!!
@@ -41,5 +41,13 @@
     <div>
         <a href="{% url 'pages:categories' %}" id = "retour">Vers Page Menus</a>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+<br>
+<br>
         
 {% endblock %}

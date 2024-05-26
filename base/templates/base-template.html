@@ -14,20 +14,29 @@
 
     <link rel="stylesheet" href="{% static 'css/bases.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/stylesTab.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">  -->
 </head>
 
 <body>
-    {% block 'content' %}
-    {% endblock %}
-</body>
- <!-- Footer  -->
-<footer >
-  <div class="footer-text">
-    <!-- Realisateur -->
-    Réalisé par <span>louangebalerwa</span> | Tous les droits sont reservés. 
-    <p>&copy; Vente de livres 2024</p>
-    </p>
+  <div class="principale">
+    <div class="contenaires">
+      {% block 'content' %}
+      {% endblock %}
+    </div>
+    
+    <div class="contenaires">
+       <!-- Footer  -->
+      <footer >
+        <div class="footer-text">
+          <!-- Realisateur -->
+          <p>Réalisé par <span>louangebalerwa</span> | Tous les droits sont reservés. <br>&copy; Vente de livres 2024</p>
+          </p>
+        </div>
+      </footer>
+    </div>
+      
   </div>
-</footer>
+  
+    
+</body>
 </html>

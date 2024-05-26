@@ -6,22 +6,22 @@
 
 {% block 'content' %}
 <section class="livres"> 
-    <header>
+    <!-- <header>
         <ul class="menu">
             <li><a href="{% url 'pages:messageImg' %}">Publier une Photo</a></li>
             <li><a href="{% url 'pages:pense_positives' %}">Puplier un texte</a></li>
             <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
         </ul>
-    </header>
+    </header> -->
     {% for pense in penses %}
       <div class ="article">
             <h2>{{ pense.TitreP }}</h2>
             <p>{{ pense.contenus}}</p> 
             <h3>Selon :{{ pense.nom_auteur }}</h3>
-            <p2>{{ pense.date}}</p2>    
+            <p>{{ pense.date}}</p>   
        </div>
     {% endfor %}
-   
+    <hr>
     {% for message in messages %}
       <div class ="articleP">
           {% if message.image %}

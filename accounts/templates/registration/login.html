@@ -8,8 +8,9 @@
 	<h1>Account Login</h1>
 
 	{% if user.is_authenticated %}
-	<p>Vous etes connecter: 
-        <a href="{% url 'accounts:profile' %}" id = "retour">Voir le Profile</a>
+	<p>Vous etes connecter avec comme : {{ user.username }}
+		<br>
+        <a href="{% url 'accounts:profile' %}" id = "prof">Voir le Profile</a>
       </p>
 	  <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
@@ -37,5 +38,23 @@
 	</form>
 	{% endif %}
 </main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endblock %}
 

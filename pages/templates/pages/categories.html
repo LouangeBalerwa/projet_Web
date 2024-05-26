@@ -16,17 +16,25 @@
         </ul>
     </header>
     <section class="arts">
-        <div class="art">
-          <a href="{% url 'pages:affichage_livre' %}">
-            <button class="btn_lien">Voir Livres!</button>
-          </a>
-        </div>
-        <div class="art">
-          <a href="{% url 'pages:affichage_penses'%}">
-            <button class="btn_lien">Voir Penses du jour!</button>
-          </a>
-        </div>
-       
-        </div>
+      <div class="liensvers">
+          <div class="lienLivre">
+            <a href="{% url 'pages:affichage_livre' %}">
+              <button class="btn_lien">Voir Livres!</button>
+            </a>
+          </div>
+          <div class="lienpense">
+            <a href="{% url 'pages:affichage_penses'%}">
+              <button class="btn_lien">Voir Penses du jour!</button>
+            </a>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+      </div>
     </section>
 {% endblock %}

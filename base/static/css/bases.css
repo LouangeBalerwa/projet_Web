@@ -57,19 +57,15 @@
 
 
 /* ===========Page categories et autre=========== */
-
 body {
   font-family: Arial, sans-serif;
-  
   background-color: green ;
-
 }
 h1{
   color: white;
   text-align: center;
 }
 
-/* =============header du menu principale==========*/
 header {
   display: flex;
   align-items: center;
@@ -100,25 +96,50 @@ header {
 .menu li a:hover {
   color: white;
 }
+
+/* ====================== */
+
+
 /* ==========================Boutons vers Article================ */
-.art a{
+.liensvers{
   display: flex;
-  justify-content: center;
-  align-items: center; /* Centre les boutons verticalement */
-  width: 100%; /* Prend toute la largeur de la page */
-  margin: 0 auto; /* Centre horizontalement le conteneur */
-  text-decoration: none;
+  flex-direction: column;
+  text-align: center;
+  background-color: green;
 }
-.btn_lien{
+.liensvers .lienLivre{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+.liensvers .lienLivre .btn_lien{
   display: inline-block; /* Permet aux boutons de se comporter comme des blocs en ligne */
+  vertical-align: middle;
+  text-align: center;
   padding: 10px 20px; /* Marge et padding pour les boutons */
   background-color: white; /* Couleur de fond bleue */
   color: black; /* Couleur de texte blanche */
-  border: solid 3px rgb(248, 252, 3); 
+  border: solid 3px coral; 
   cursor: pointer; /* Change le curseur en pointeur lors du survol */
   margin-top: 100px;
   border-radius: 25%;
 
+}
+/* .liensvers .lienpense{
+  padding: 20px;
+ 
+} */
+.liensvers .lienpense .btn_lien{
+  display: inline-block; /* Permet aux boutons de se comporter comme des blocs en ligne */
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px 20px; /* Marge et padding pour les boutons */
+  background-color: white; /* Couleur de fond bleue */
+  color: black; /* Couleur de texte blanche */
+  border: solid 3px coral; 
+  cursor: pointer; /* Change le curseur en pointeur lors du survol */
+  margin-top: 100px;
+  border-radius: 25%;
 }
 
 /* ========================Livres======================= */
@@ -206,39 +227,65 @@ header {
 }
 .article p {
   width: 300px;
-  font-size: large;
-  font-size: 40px;
+  font-size: 16px;
 }
 .articleP {
   border: 2px solid black;
   text-align: center;
 }
 .articleP h2{
- 
   color: #000;
  
 }
-#retour{
+#prof{
+  background-color:white;
+  text-decoration: none;
+  padding: 2px;
+  border-radius: 25%;
+  margin: 20px;
+  
+}
+.retour_btn_form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#retour_form{
+  position: absolute;
+  bottom: 0px;
   font-size: 20px;
   text-decoration: 0;
   color: blue;
-  margin: 10px ;
+  margin-bottom: -20px ;
   background-color: white;
   border-radius: 6px;
-  padding: 5px;
+  padding: 2px;
+}
+#retour{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  bottom: 80px;
+  font-size: 20px;
+  text-decoration: 0;
+  color: blue;
+  background-color: white;
+  border-radius: 6px;
+  padding: 2px;
 }
 
 
 /* ===============Formulaires===============*/
 
 form {
-    width: 500px;
-    margin: 20px auto;
+    width: 50%;
+    margin: 30px auto;
   }
   
   label {
     display: block;
-    margin-bottom: 5px;
   }
   
   input, textarea {
@@ -282,20 +329,6 @@ form {
   
 } */
 
-
-.article img {
-  width: 200px;
-  height: 150px;
-  margin: 10px;
-}
-
-.article p {
-  text-align: center;
-  font-size: 10px;
-}
-
-
-
 .pense #penseImg{
   margin-top: 20px;
   width: 300px;
@@ -309,13 +342,19 @@ form {
 }
 
 /* =================bas de la page================= */
-.footer-text {
-  position: absolute;
-  bottom: 5px; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  color:black;
-  text-align: center; 
+.principale{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.principale .contenaires .footer-text {
+  
+  display: flex;
+  background-color: coral;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 5px;
 }
 .footer-text span {
   color:white;

@@ -1,11 +1,13 @@
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
 from .forms import auteurForm, compteForm, pensesForm, livreForm, messageImgForm, achatForm
 from .models import auteur, creationCompte,pensesPositives, messageImage,livre,achat
 from django import forms 
 from django.contrib.auth.models import Group
+from django.core.mail import BadHeaderError, send_mail
+
 # # To create a group:
 # group = Group.objects.create(name="visiteurs")
 
@@ -227,3 +229,23 @@ def telecharger_pdf(request):
 def about(request):
   return render(request, 'pages/about.html')
 
+# ====================Avoit Email==========================
+
+def contact_send(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        # Envoyer l'email
+        send_mail(
+            subject='Message de contact de ' + name,
+            message=message,
+            from_email=email,
+            recipient_list=['louangeabalerwa@gmail.com'],
+        )
+
+        # Afficher un message de confirmation
+        return render(request, 'pages/contact_send.html')
+    else:
+        return render(request, 'pages/contact_send.html')
