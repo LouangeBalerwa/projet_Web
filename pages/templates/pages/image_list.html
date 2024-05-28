@@ -5,7 +5,7 @@
 {% block 'title' %}Show_Images{% endblock %}
 
 {% block 'content' %}
-    <div>
+    <!-- <div>
       {% for message in messages %}
          <h2>{{message.nom_auteur}}</h2>
           {% if message.image %}
@@ -19,6 +19,41 @@
       
     <div>
       <a href="{% url 'pages:categories' %}" id = "retour">Vers Page Menus</a>
+    </div> -->
+    {% for article in articles %}
+    <div class="pathimage">
+      {% if article.image %}
+        <img src = "/media/{{article.image}}" >
+      {% endif %}
+      <h2>Auteur: {{article.nom_auteur }}</h2>
+      <p>Date: {{article.date_mes}}</p>
     </div>
+    {% endfor %}
+
+{% if paginator.num_pages > 1 %}
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li class="page_lien"><a href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>
+        {% endif %}
+
+        {% for page_number in paginator.page_range %}
+            {% if page_number == page_obj.number %}
+                <li class="active"><a href="?page={{ page_number }}">{{ page_number }}</a></li>
+            {% else %}
+                <li class="active_btn"><a href="?page={{ page_number }}">{{ page_number }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li class="page_lien"><a href="?page={{ page_obj.next_page_number }}">Suivant</a></li>
+        {% endif %}
+    </ul>
+    <div >
+      <ul class="menu_livre">
+        <li><a href="{% url 'pages:messageImg' %}">Publier une Photo</a></li>
+      </ul>
+    </div>
+{% endif %}
+
         
 {% endblock %}

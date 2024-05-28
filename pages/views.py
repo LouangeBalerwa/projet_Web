@@ -7,6 +7,8 @@ from .models import auteur, creationCompte,pensesPositives, messageImage,livre,a
 from django import forms 
 from django.contrib.auth.models import Group
 from django.core.mail import BadHeaderError, send_mail
+from django.core.paginator import Paginator, Page
+
 
 # # To create a group:
 # group = Group.objects.create(name="visiteurs")
@@ -36,7 +38,6 @@ def ajouter_auteur(request):
   return render(request, "pages/ajouter_auteur.html", {'form': form})
 
 #  ------------------Show auteur -----------------------------
-
 
 def affichage_auteur(request):
   try:
@@ -167,15 +168,32 @@ def message_image(request):
     return render(request, 'pages/messageImg.html.',{'form': form})
 
 # ------------------Show penses du jours image -----------------------------
-# def image_list(request):
-#   try:
-#     messages = messageImage.objects.all()
-#   except:
-#     raise Http404("Cette page n'exciste pas!!!")
+def image_list(request):
+  try:
+    messages = messageImage.objects.all()
+    paginator = Paginator(messages, 1 ) # 10 articles par page
+    page_number = request.GET.get('page')
+    page_number = page_number if page_number else 1
+  except:
+    raise Http404("Cette page n'exciste pas!!!")
   
-#   data =  {'messages': messages}
+  try:
+    page = paginator.page(page_number)
+  except PageNotAnInteger:
+    page = paginator.page(1)
+  except EmptyPage:
+    page = paginator.page(paginator.num_pages)
+    
+  context = {
+    'articles': page.object_list, # Liste des articles de la page actuelle
+    'page_obj': page, # Objet page contenant des informations de pagination
+    'paginator': paginator, # Paginator pour générer des liens de pagination
+}
+
   
-#   return render(request, 'pages/image_list.html', data)
+  # data =  {'messages': messages}
+  
+  return render(request, 'pages/image_list.html', context)
 
 # =======================FIN PENSES POSITIVES ==================
 

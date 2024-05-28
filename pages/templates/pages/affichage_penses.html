@@ -6,13 +6,7 @@
 
 {% block 'content' %}
 <section class="livres"> 
-    <!-- <header>
-        <ul class="menu">
-            <li><a href="{% url 'pages:messageImg' %}">Publier une Photo</a></li>
-            <li><a href="{% url 'pages:pense_positives' %}">Puplier un texte</a></li>
-            <li><a href="{% url 'pages:categories' %}">Vers Page Menus</a></li>
-        </ul>
-    </header> -->
+
     {% for pense in penses %}
       <div class ="article">
             <h2>{{ pense.TitreP }}</h2>
@@ -21,23 +15,17 @@
             <p>{{ pense.date}}</p>   
        </div>
     {% endfor %}
-    
-    {% for message in messages %}
-      <div class ="articleP">
-          {% if message.image %}
-            <img src = "/media/{{message.image}}" width="100%" height ="200px">
-          {% endif %}
-        <h2>Auteur: {{message.nom_auteur}}</h2>
-        <p>{{message.date_mes}}</p>
-      </div>
-    {% endfor %}
     <div>
       <ul class="menu_livre">
-        <li><a href="{% url 'pages:messageImg' %}">Publier une Photo</a></li>
         <li><a href="{% url 'pages:pense_positives' %}">Puplier un texte</a></li>
       </ul>
     </div>
-
-
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 {% endblock %}

@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Envoyer un message</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+{% extends 'base-template.html' %}
+
+{% load static %}
+
+{% block 'title' %}Contact{% endblock %}
+
+{% block 'content' %}
     <h1>Envoyer un message</h1>
 
     <form action="{% url 'pages:contact_send' %}" method="post">
@@ -22,7 +21,6 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" class="btn">Envoyer</button>
     </form>
-</body>
-</html>
+{% endblock %}

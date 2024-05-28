@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="{% static 'css/bases.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/stylesTab.css' %}" type="text/css">
-    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">  -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"> 
 </head>
 
 <body>
@@ -24,11 +24,11 @@
         <!-- Menu principale -->
           <ul class="menu">
             <li><a href="{% url 'pages:home'%}">Home Page</a></li>
-            <li><a href="{% url 'pages:categories' %}" >Vers Page Menus</a><l/li>
+            <li><a href="{% url 'pages:categories' %}" >Vers Page Menus</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'pages:affichage_auteur'%}">Voir Auteurs</a></li>
             <li><a href="{% url 'pages:affichage_compte'%}">Creer un Comptes</a></li>
-            
+            <li><a href="{% url 'pages:contact_send' %}">Contact</a></li>
             <li><a href="{% url 'pages:about' %}">About Me</a></li>
           </ul>
       </header>

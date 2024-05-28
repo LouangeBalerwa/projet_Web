@@ -122,7 +122,7 @@ h1{
   color: black; /* Couleur de texte blanche */
   border: solid 3px coral; 
   cursor: pointer; /* Change le curseur en pointeur lors du survol */
-  margin-top: 100px;
+  margin-top: 50px;
   border-radius: 25%;
 
 }
@@ -139,7 +139,7 @@ h1{
   color: black; /* Couleur de texte blanche */
   border: solid 3px coral; 
   cursor: pointer; /* Change le curseur en pointeur lors du survol */
-  margin-top: 100px;
+  margin-top: 50px;
   border-radius: 25%;
 }
 
@@ -177,12 +177,18 @@ h1{
 }
 .menu_livre {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
 }
 .menu_livre li {
   list-style: none;
+  margin-left:50px;
+  
 }
 .menu_livre li a {
-  position: relative;
   font-size: 20px;
   text-decoration: 0;
   color: blue;
@@ -190,6 +196,7 @@ h1{
   background-color: white;
   border-radius: 6px;
   padding: 5px;
+ 
 }
 .menu_livre li a:hover {
   color: red;
@@ -210,11 +217,11 @@ h1{
 .article {
   width: 300px;
   height: 300px;
-  border: 1px solid blue;
+  border: 2px solid blue;
   padding: 5px;
   text-align: center;
   background-color: white;
-  margin: 5px;
+  margin: 10px;
 }
 .article h2{
   font-size: 20px;
@@ -224,15 +231,17 @@ h1{
 .article h3{
   font-size: 15px;
   margin-bottom: 3px;
-  color: black;
+  color: red;
 }
 .article p {
   width: 300px;
   font-size: 16px;
+  
 }
 .articleP {
   border: 2px solid black;
   text-align: center;
+  padding: 10px;
 }
 .articleP h2{
   color: #000;
@@ -360,3 +369,4 @@ form {
 .footer-text span {
   color:white;
 }
+

@@ -65,7 +65,7 @@ class messageImage(models.Model):
     def __str__(self):
         return self.nom_auteur
     def get_absolute_url(self):
-        return "affichage_penses"
+        return "image_list"
     
 # ================== classe faire Achats=================================== 
 class achat(models.Model):
